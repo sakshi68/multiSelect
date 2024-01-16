@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.multi-select-dropdown {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.selected-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.selected-option {
+  position: relative;
+  background-color: #f0f0f0;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px 15px;
+
+  flex: 0 0 calc(25% - 8px);
+}
+.selected-option::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Adjust this value based on your preference */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff; /* Blue line under border-bottom */
+}
+
+.remove-option {
+  cursor: pointer;
+  font-size: 12px;
+  margin-left: 4px;
+  background-color: #dcdcdc;
+  padding: 2px 4px;
+}
+
+.placeholder {
+  color: #808080;
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid #737374;
+  border-radius: 4px;
+  overflow: hidden;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  padding: 0px 10px;
+
+  box-shadow: 0 2px 4px rgba(225, 221, 221, 0.1);
+  background-color: #c7d1d5;
+  z-index: 1;
+}
+.options-list::-webkit-scrollbar {
+  width: 7px;
+  height: 5px;
+}
+
+.options-list::-webkit-scrollbar-thumb {
+  background-color: #bbbab7; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Border-radius of the scrollbar thumb */
+}
+
+.option {
+  cursor: pointer;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #e6e6e6;
+}
+
+.selected {
+  background-color: #a6c6e4;
+}
+
+.selected-options input {
+  border: none;
+  border-bottom: 2px solid #007bff;
+  outline: none;
+  padding: 4px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+  width: calc(100% - 8px);
+  box-sizing: border-box;
+}
+
+.selected-options + .options-list {
+  margin-top: 3px;
+}
+
+.heading {
+  font-size: 25px;
+  margin-bottom: 16px;
+  font-weight: 200;
+  color: rgb(101, 15, 141);
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
 }
