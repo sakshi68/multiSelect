@@ -29,3 +29,6 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ## Preview
+![Screenshot from 2024-01-16 23-15-05](https://github.com/sakshi68/multiSelect/assets/64880576/b787c577-f479-41dd-921d-1338f0b9f40e)
+
+
